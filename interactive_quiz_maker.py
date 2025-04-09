@@ -41,10 +41,20 @@ def create_quiz():
             print("Invalid answer. Must be one of: a, b, c, d.")
             continue
 
+    #   create a dictionary to hold the question data
+        question_data = {
+            "question": question,
+            "choices": choices,
+            "answer": correct
+        }
+
     #   save the question and answers to the specified quiz file
+        save_to_file(question_data)
+        print("Question saved successfully!")  # diplay a message confirming that all questions have been saved to the specified file
+
     #   after saving a question, ask the user if they want to add another question
     #       if the answer is not "yes", exit the loop and diplay a goodbye message
-    #       diplay a message confirming that all questions have been saved to the specified file
+    
 
 # function to check file doesn't exists and create it if necessary
 def main_file(): 
