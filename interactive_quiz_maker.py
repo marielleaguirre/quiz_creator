@@ -22,6 +22,8 @@ def save_to_file(question_data):
 def create_quiz(): 
     # display a welcoming message
     print(colored("\nWelcome to my Python Quiz Creator!\n", "yellow", attrs=["bold"]))
+    time.sleep(1)
+
     print(colored("Let's get started! Add as many questions as you want :)", "green"))
 
     # start a loop that allows the user to add multiple questions
@@ -59,6 +61,7 @@ def create_quiz():
         if again != 'yes':
             print(colored("\nCongratulations on creating your quiz! :)", "magenta", attrs=["bold"]))
             print(colored("Exiting... Goodbye!", "red", attrs=["bold"]))
+            time.sleep(1)
             break
         
     print(colored(f"\nAll questions saved to '{quiz_file}'.", "green"))  # diplay a message confirming that all questions have been saved to the specified file
