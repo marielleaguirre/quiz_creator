@@ -25,7 +25,13 @@ def create_quiz():
     while True: 
     #   ask the user to input a question
         question = input("Enter your question: ")
+    
     #   ask the user to provide 4 possible choices (a, b, c, d)
+        choices = {}
+        for option in ['a', 'b', 'c', 'd']:
+            choice = input(f"Enter choice {option.upper()}: ").strip()
+            choices[option] = choice
+        
     #   ask the user to input the correct answer
     #   validate the correct answer
     #       if the correct answer matches one of the possible choices, continue
