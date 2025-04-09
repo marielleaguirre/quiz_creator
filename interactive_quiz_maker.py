@@ -1,7 +1,9 @@
 # Create a program that ask user for a question, it will also ask for 4 possible answer (a, b, c, d) and the correct answer. 
 # Write the collected data to a text file. Ask another question until the user chose to exit.
 
-import os # for file operations
+import os  # for file operations
+from termcolor import colored  # for color formatting
+import time  # for adding delays
 
 # ask the user to enter the file name where quiz questions will be saved
 quiz_file = input("Enter the quiz file name (e.g., 'quiz_data.txt'): ").strip()
