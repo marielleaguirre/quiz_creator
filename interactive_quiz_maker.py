@@ -19,8 +19,12 @@ def save_to_file(question_data):
 # function to create the quiz by asking for user input
 def create_quiz(): 
     # display a welcoming message
+    print("\nWelcome to my Python Quiz Creator!")
+    print("Let's get started! Add as many questions as you want :)")
     # start a loop that allows the user to add multiple questions
+    while True: 
     #   ask the user to input a question
+        question = input("Enter your question: ")
     #   ask the user to provide 4 possible choices (a, b, c, d)
     #   ask the user to input the correct answer
     #   validate the correct answer
