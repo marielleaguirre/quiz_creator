@@ -38,7 +38,7 @@ def create_quiz():
 
         # validate the correct answer
         if correct not in choices: 
-            print("Invalid answer. Must be one of: a, b, c, d.")
+            print("Invalid answer. Must be one of: a, b, c, d.\n")
             continue
 
         # create a dictionary to hold the question data
@@ -50,7 +50,7 @@ def create_quiz():
 
         # save the question and answers to the specified quiz file
         save_to_file(question_data)
-        print("Question saved successfully!")  
+        print("Question saved successfully!\n")  
 
         # ask the user if they want to add another question
         again = input("Add another question? (type 'yes' to continue and 'no' to exit): ")
