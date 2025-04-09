@@ -10,10 +10,10 @@ quiz_file = input("Enter the quiz file name (e.g., 'quiz_data.txt'): ").strip()
 def save_to_file(question_data): 
     with open(quiz_file, "a", encoding="utf-8") as file:
         file.write("Question:\n" + question_data['question'] + "\n")
-    for label, choice in question_data['choices'].items():
-        file.write(f" {label}) {choice}\n")
-    file.write("Answer:\n" + question_data['answer'] + "\n")
-    file.write("-" * 50 + "\n")
+        for label, choice in question_data['choices'].items():
+            file.write(f" {label}) {choice}\n")
+        file.write("Answer:\n" + question_data['answer'] + "\n")
+        file.write("-" * 50 + "\n")
         
 
 # function to create the quiz by asking for user input
@@ -21,7 +21,7 @@ def create_quiz():
     # display a welcoming message
     print("\nWelcome to my Python Quiz Creator!")
     print("Let's get started! Add as many questions as you want :)")
-    
+
     # start a loop that allows the user to add multiple questions
     while True: 
         # ask the user to input a question
@@ -67,3 +67,8 @@ def main_file():
     if not os.path.exists(quiz_file):
         with open(quiz_file, "w") as f:
             f.write("=== Quiz Questions ===\n\n")
+
+    create_quiz()
+
+if __name__ == "__main__":
+    main_file()
