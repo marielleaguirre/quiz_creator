@@ -53,8 +53,12 @@ def create_quiz():
         print("Question saved successfully!")  # diplay a message confirming that all questions have been saved to the specified file
 
     #   after saving a question, ask the user if they want to add another question
+        again = input("Add another question? (type 'yes' to continue and 'no' to exit): ")
     #       if the answer is not "yes", exit the loop and diplay a goodbye message
-    
+        if again != 'yes':
+            print("\nCongratulations on creating your quiz! :)")
+            print("Exiting... Goodbye!")
+            break
 
 # function to check file doesn't exists and create it if necessary
 def main_file(): 
