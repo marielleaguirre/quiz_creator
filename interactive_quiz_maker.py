@@ -21,47 +21,46 @@ def create_quiz():
     # display a welcoming message
     print("\nWelcome to my Python Quiz Creator!")
     print("Let's get started! Add as many questions as you want :)")
+    
     # start a loop that allows the user to add multiple questions
     while True: 
-    #   ask the user to input a question
+        # ask the user to input a question
         question = input("Enter your question: ")
     
-    #   ask the user to provide 4 possible choices (a, b, c, d)
+        # ask the user to provide 4 possible choices (a, b, c, d)
         choices = {}
         for option in ['a', 'b', 'c', 'd']:
             choice = input(f"Enter choice {option.upper()}: ").strip()
             choices[option] = choice
         
-    #   ask the user to input the correct answer
+        # ask the user to input the correct answer
         correct = input("Enter the correct answer (a, b, c, or d): ").strip().lower()
 
-    #   validate the correct answer
-    #       if the correct answer matches one of the possible choices, continue
-        if correct not in choices: # else, print "invalid" and prompt the user to enter the question again
+        # validate the correct answer
+        if correct not in choices: 
             print("Invalid answer. Must be one of: a, b, c, d.")
             continue
 
-    #   create a dictionary to hold the question data
+        # create a dictionary to hold the question data
         question_data = {
             "question": question,
             "choices": choices,
             "answer": correct
         }
 
-    #   save the question and answers to the specified quiz file
+        # save the question and answers to the specified quiz file
         save_to_file(question_data)
         print("Question saved successfully!")  
 
-    #   after saving a question, ask the user if they want to add another question
+        # ask the user if they want to add another question
         again = input("Add another question? (type 'yes' to continue and 'no' to exit): ")
-    #       if the answer is not "yes", exit the loop and diplay a goodbye message
         if again != 'yes':
             print("\nCongratulations on creating your quiz! :)")
             print("Exiting... Goodbye!")
             break
         
     print(f"\nAll questions saved to '{quiz_file}'.")  # diplay a message confirming that all questions have been saved to the specified file
-    
+
 # function to check file doesn't exists and create it if necessary
 def main_file(): 
     # check if the quiz file already exists. if not, create a file with introductory header
