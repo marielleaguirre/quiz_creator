@@ -15,3 +15,12 @@
 #   after saving a question, ask the user if they want to add another question
 #       if the answer is not "yes", exit the loop and diplay a goodbye message
 #       diplay a message confirming that all questions have been saved to the specified file
+
+# function to save the quiz question data to file
+def save_to_file(question_data): 
+
+# function to create the quiz by asking for user input
+def create_quiz(): 
+
+# function to check file doesn't exists and create it if necessary
+def main_file(): 
