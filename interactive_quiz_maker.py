@@ -21,10 +21,10 @@ def save_to_file(question_data):
 # function to create the quiz by asking for user input
 def create_quiz(): 
     # display a welcoming message
-    print(colored("\nWelcome to my Python Quiz Creator!\n", "yellow", attrs=["bold"]))
+    print(colored("\nWelcome to my Python Quiz Creator! *ฅ^•ﻌ•^ฅ*\n", "yellow", attrs=["bold"]))
     time.sleep(1)
 
-    print(colored("Let's get started! Add as many questions as you want :)", "green"))
+    print(colored("Let's get started! Add as many questions as you want ₍^. .^₎⟆", "green"))
 
     # start a loop that allows the user to add multiple questions
     while True: 
@@ -34,7 +34,7 @@ def create_quiz():
         # ask the user to provide 4 possible choices (a, b, c, d)
         choices = {}
         for option in ['a', 'b', 'c', 'd']:
-            choice = input(colored(f"Enter choice {option.upper()}: ", "cyan")).strip()
+            choice = input(colored(f" ⋆˚✿˖° Enter choice {option.upper()}: ", "cyan")).strip()
             choices[option] = choice
         
         # ask the user to input the correct answer
@@ -42,7 +42,7 @@ def create_quiz():
 
         # validate the correct answer
         if correct not in choices: 
-            print(colored("Invalid answer. Must be one of: a, b, c, d.\n", "red"))
+            print(colored("Invalid answer (╥﹏╥). Must be one of: a, b, c, d.\n", "red"))
             continue
 
         # create a dictionary to hold the question data
@@ -54,13 +54,13 @@ def create_quiz():
 
         # save the question and answers to the specified quiz file
         save_to_file(question_data)
-        print(colored("Question saved successfully!\n", "yellow"))  
+        print(colored("Question saved successfully! /ᐠ. .ᐟ\ Ⳋ ✧\n", "yellow"))  
 
         # ask the user if they want to add another question
-        again = input(colored("Add another question? (type 'yes' to continue and 'no' to exit): ", "blue"))
+        again = input(colored("Add another question? (๑•᎑•๑) (type 'yes' to continue and 'no' to exit): ", "blue"))
         if again != 'yes':
-            print(colored("\nCongratulations on creating your quiz! :)", "magenta", attrs=["bold"]))
-            print(colored("Exiting... Goodbye!", "red", attrs=["bold"]))
+            print(colored("\nCongratulations on creating your quiz!", "magenta", attrs=["bold"]))
+            print(colored("Exiting... Goodbye! (∩˃ω˂∩)", "red", attrs=["bold"]))
             time.sleep(1)
             break
         
