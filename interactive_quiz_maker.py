@@ -1,8 +1,8 @@
 # Create a program that ask user for a question, it will also ask for 4 possible answer (a, b, c, d) and the correct answer. 
 # Write the collected data to a text file. Ask another question until the user chose to exit.
 
-# ask the user to enter the file name where quiz questions will be saved
-# check if the quiz file already exists. if not, create a file with introductory header
+
+
 # display a welcoming message
 # start a loop that allows the user to add multiple questions
 #   ask the user to input a question
@@ -16,11 +16,22 @@
 #       if the answer is not "yes", exit the loop and diplay a goodbye message
 #       diplay a message confirming that all questions have been saved to the specified file
 
+import os # for file operations
+
+# ask the user to enter the file name where quiz questions will be saved
+quiz_file = input("Enter the quiz file name (e.g., 'quiz_data.txt'): ").strip()
+
+# function to check file doesn't exists and create it if necessary
+def main_file(): 
+    # check if the quiz file already exists. if not, create a file with introductory header
+    if not os.path.exists(quiz_file):
+        with open(quiz_file, "w") as f:
+            f.write("=== Quiz Questions ===\n\n")
+
+            
 # function to save the quiz question data to file
 def save_to_file(question_data): 
 
 # function to create the quiz by asking for user input
 def create_quiz(): 
 
-# function to check file doesn't exists and create it if necessary
-def main_file(): 
