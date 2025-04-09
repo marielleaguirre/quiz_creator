@@ -33,9 +33,14 @@ def create_quiz():
             choices[option] = choice
         
     #   ask the user to input the correct answer
+        correct = input("Enter the correct answer (a, b, c, or d): ").strip().lower()
+
     #   validate the correct answer
     #       if the correct answer matches one of the possible choices, continue
-    #       else, print "invalid" and prompt the user to enter the question again
+        if correct not in choices: # else, print "invalid" and prompt the user to enter the question again
+            print("Invalid answer. Must be one of: a, b, c, d.")
+            continue
+
     #   save the question and answers to the specified quiz file
     #   after saving a question, ask the user if they want to add another question
     #       if the answer is not "yes", exit the loop and diplay a goodbye message
