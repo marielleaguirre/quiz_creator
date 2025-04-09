@@ -9,10 +9,16 @@ quiz_file = input("Enter the quiz file name (e.g., 'quiz_data.txt'): ").strip()
 # function to save the quiz question data to file
 def save_to_file(question_data): 
     # open the quiz file in append mode
+    with open(quiz_file, "a", encoding="utf-8") as file:
     #   write the question to the file
+        file.write("Question:\n" + question_data['question'] + "\n")
     #   loop through the answer choices and write them to the file
+    for label, choice in question_data['choices'].items():
+        file.write(f" {label}) {choice}\n")
     #   write the correct answer to the file
+    file.write("Answer:\n" + question_data['answer'] + "\n")
     #   add a seperator line between questions
+    file.write("-" * 50 + "\n")
         
 
 # function to create the quiz by asking for user input
