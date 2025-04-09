@@ -6,7 +6,7 @@ from termcolor import colored  # for color formatting
 import time  # for adding delays
 
 # ask the user to enter the file name where quiz questions will be saved
-quiz_file = input("Enter the quiz file name (e.g., 'quiz_data.txt'): ").strip()
+quiz_file = input(colored("Enter the quiz file name (e.g., 'quiz_data.txt'): ", "blue")).strip()
 
 # function to save the quiz question data to file
 def save_to_file(question_data): 
@@ -21,26 +21,26 @@ def save_to_file(question_data):
 # function to create the quiz by asking for user input
 def create_quiz(): 
     # display a welcoming message
-    print("\nWelcome to my Python Quiz Creator!")
-    print("Let's get started! Add as many questions as you want :)")
+    print(colored("\nWelcome to my Python Quiz Creator!\n", "yellow", attrs=["bold"]))
+    print(colored("Let's get started! Add as many questions as you want :)", "green"))
 
     # start a loop that allows the user to add multiple questions
     while True: 
         # ask the user to input a question
-        question = input("Enter your question: ")
+        question = input(colored("Enter your question: ", "blue")).strip()
     
         # ask the user to provide 4 possible choices (a, b, c, d)
         choices = {}
         for option in ['a', 'b', 'c', 'd']:
-            choice = input(f"Enter choice {option.upper()}: ").strip()
+            choice = input(colored(f"Enter choice {option.upper()}: ", "cyan")).strip()
             choices[option] = choice
         
         # ask the user to input the correct answer
-        correct = input("Enter the correct answer (a, b, c, or d): ").strip().lower()
+        correct = input(colored("Enter the correct answer (a, b, c, or d): ", "green")).strip().lower()
 
         # validate the correct answer
         if correct not in choices: 
-            print("Invalid answer. Must be one of: a, b, c, d.\n")
+            print(colored("Invalid answer. Must be one of: a, b, c, d.\n", "red"))
             continue
 
         # create a dictionary to hold the question data
@@ -52,16 +52,16 @@ def create_quiz():
 
         # save the question and answers to the specified quiz file
         save_to_file(question_data)
-        print("Question saved successfully!\n")  
+        print(colored("Question saved successfully!\n", "yellow"))  
 
         # ask the user if they want to add another question
-        again = input("Add another question? (type 'yes' to continue and 'no' to exit): ")
+        again = input(colored("Add another question? (type 'yes' to continue and 'no' to exit): ", "blue"))
         if again != 'yes':
-            print("\nCongratulations on creating your quiz! :)")
-            print("Exiting... Goodbye!")
+            print(colored("\nCongratulations on creating your quiz! :)", "magenta", attrs=["bold"]))
+            print(colored("Exiting... Goodbye!", "red", attrs=["bold"]))
             break
         
-    print(f"\nAll questions saved to '{quiz_file}'.")  # diplay a message confirming that all questions have been saved to the specified file
+    print(colored(f"\nAll questions saved to '{quiz_file}'.", "green"))  # diplay a message confirming that all questions have been saved to the specified file
 
 # function to check file doesn't exists and create it if necessary
 def main_file(): 
