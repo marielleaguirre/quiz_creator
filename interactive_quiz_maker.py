@@ -11,6 +11,7 @@ quiz_file = input(colored("Enter the quiz file name (e.g., 'quiz_data.txt'): ", 
 # function to save the quiz question data to file
 def save_to_file(question_data): 
     with open(quiz_file, "a", encoding="utf-8") as file:
+        file.write("\n" + "-" * 50 + "\n")
         file.write("Question:\n" + question_data['question'] + "\n")
         for label, choice in question_data['choices'].items():
             file.write(f" {label}) {choice}\n")
