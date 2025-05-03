@@ -1,0 +1,54 @@
+# Create a Quiz program that read the output file of the Quiz Creator
+# The user will answer the randomely selected question and check if the answer is correct
+
+# import necessary libraries for file handling, randomization, and GUI creation
+# function to load questions from the quiz file
+    # check if the file exists, if not, return an empty list
+    # open the file and read its content
+    # split the content into individual questions by a separator (50 dashes)
+        # initialize an empty list to store the parsed questions
+    # loop through each raw question
+        # skip invalid or empty questions
+        # extract the question text and choices (a, b, c, d)
+            # split choice from the number and text
+        # extract the correct answer (lowercased for comparison)
+        # append the parsed question, choices, and answer to the questions list
+            # skip if there's an error in parsing
+    # return the list of parsed questions
+# function to start the quiz
+    # function to load the next question
+        # if no more questions, end the quiz
+        # select a random question, remove it from the data pool
+        # display the question and choices on the user interface
+            # enable answer buttons
+            # reset feedback label
+            # disable next button until answer is chosen
+    # function to check if the selected answer is correct
+        # get the correct answer
+        # if correct, update score and display "Correct" feedback
+        # if incorrect, show the correct answer
+        # disable answer buttons after selection an answer
+        # enable next question button
+    # function to end the quiz and display the final score
+        # remove all widgets to clean the window
+        # display the final score
+        # display a motivational message based on the score
+        # diplay the result message in a pop up
+    # configure the root window (dark themed)
+    # style configuration for buttons
+    # label to display the question
+    # create answer buttons for choice a, b, c, d
+    # feedback label to show whether the answer is correct or not
+    # button to move to the next question
+    # load the first question
+# function to run the quiz game
+    # create the main tkinter window
+    # set the title of the window
+    # set the window size
+    # hide the window initially 
+    # prompt the user to select a quiz file
+    # if no file is selected, display an error message and exit
+    # load questions from the selected quiz file
+    # show the main window and start the quiz
+        # run the tkinter event loop
+# execute the main function if the script is run directly
