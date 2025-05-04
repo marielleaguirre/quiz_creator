@@ -56,10 +56,11 @@ def start_quiz():
     
 # function to run the quiz game
 def main_program():
-    # create the main tkinter window
-    # set the title of the window
-    # set the window size
-    # hide the window initially 
+    global root
+    root = tk.Tk()  # create the main tkinter window
+    root.title("My Quiz Game!")  # set the title of the window
+    root.geometry("600x500")  # set the window size
+    root.withdraw()  # hide the window initially 
     # prompt the user to select a quiz file
     # if no file is selected, display an error message and exit
     # load questions from the selected quiz file
