@@ -67,7 +67,11 @@ def start_quiz(quiz_data):
         current["data"].remove(current["current_question"])
 
         # display the question and choices on the user interface
-            # enable answer buttons
+        question_label.config(text=current["current_question"]["question"])
+        for key in ['a', 'b', 'c', 'd']:
+            choice = current["current_question"]["choices"][key]
+            buttons[key].config(text=f"{key.upper()}) {choice}", state="normal")  # enable answer buttons
+            
             # reset feedback label
             # disable next button until answer is chosen
 
