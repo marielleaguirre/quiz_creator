@@ -81,7 +81,10 @@ def start_quiz(quiz_data):
         if selected == correct:  # if correct, update score and display "Correct" feedback
             feedback_label.config(text="Correct!")
             current["score"] += 1
-        # if incorrect, show the correct answer
+        else:  # if incorrect, show the correct answer
+                correct_text = current["current_question"]["choices"][correct]
+                feedback_label.config(text=f"Wrong! Correct answer is {correct.upper()}) {correct_text}")
+
         # disable answer buttons after selection an answer
         # enable next question button
 
