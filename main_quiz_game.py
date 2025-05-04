@@ -78,7 +78,9 @@ def start_quiz(quiz_data):
     # function to check if the selected answer is correct
     def check_answer(selected):
         correct = current["current_question"]["answer"]  # get the correct answer
-        # if correct, update score and display "Correct" feedback
+        if selected == correct:  # if correct, update score and display "Correct" feedback
+            feedback_label.config(text="Correct!")
+            current["score"] += 1
         # if incorrect, show the correct answer
         # disable answer buttons after selection an answer
         # enable next question button
