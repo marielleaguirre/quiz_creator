@@ -20,9 +20,14 @@ def load_questions(filename):
     # split the content into individual questions by a separator (50 dashes)
     raw_questions = content.split("-" * 50)
     questions = []  # initialize an empty list to store the parsed questions
-    
+
     # loop through each raw question
+    for raw_content in raw_questions:
         # skip invalid or empty questions
+        lines = [line.strip() for line in raw_content.strip().splitlines()]
+        if not lines or "Question:" not in lines[0]:  # skip invalid or empty questions
+            continue
+        
         # extract the question text and choices (a, b, c, d)
             # split choice from the number and text
         # extract the correct answer (lowercased for comparison)
