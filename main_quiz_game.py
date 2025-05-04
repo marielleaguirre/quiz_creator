@@ -138,6 +138,7 @@ def start_quiz(quiz_data):
     next_button.pack(pady=10)
 
     # load the first question
+    load_next_question()
     
 # function to run the quiz game
 def main_program():
