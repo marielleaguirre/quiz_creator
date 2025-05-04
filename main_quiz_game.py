@@ -120,6 +120,9 @@ def start_quiz(quiz_data):
     style.configure("TButton")
 
     # label to display the question
+    question_label = tk.Label(root, text="")
+    question_label.pack(pady=20)
+
     # create answer buttons for choice a, b, c, d
     # feedback label to show whether the answer is correct or not
     # button to move to the next question
