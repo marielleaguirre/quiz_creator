@@ -94,8 +94,12 @@ def start_quiz(quiz_data):
     def end_quiz():
         for widget in root.winfo_children():  # remove all widgets to clean the window
             widget.destroy()
-            
+
         # display the final score
+        result = f" Quiz Finished! Your Score: {current['score']}/{current['total']}"
+        result_label = tk.Label(root, text=result)
+        result_label.pack(pady=20)
+
         # display a motivational message based on the score
         # diplay the result message in a pop up
     # configure the root window (dark themed)
