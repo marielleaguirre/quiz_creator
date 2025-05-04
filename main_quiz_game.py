@@ -12,7 +12,7 @@ from tkinter import ttk
 def load_questions(filename):
     # check if the file exists, if not, return an empty list
     if not os.path.exists(filename):
-        print("Quiz file not found.")
+        print("Quiz file not found. (｡•́︿•̀｡)")
         return []
     
     # open the file and read its content
@@ -80,7 +80,7 @@ def start_quiz(quiz_data):
     def check_answer(selected):
         correct = current["current_question"]["answer"]  # get the correct answer
         if selected == correct:  # if correct, update score and display "Correct" feedback
-            feedback_label.config(text="Correct!", fg="#4CAF50")
+            feedback_label.config(text="Correct! (≧□≦) ♡", fg="#4CAF50")
             current["score"] += 1
         else:  # if incorrect, show the correct answer
                 correct_text = current["current_question"]["choices"][correct]
@@ -103,11 +103,11 @@ def start_quiz(quiz_data):
 
         # display a motivational message based on the score
         if current["score"] == current["total"]:
-            message = "Perfect score! You're a quiz master!"
+            message = "Perfect score! You're a quiz master! ✧*。٩(ˋ・‿・)ى✧*。"
         elif current["score"] >= current["total"] // 2:
-            message = "Nice try! You did well!"
+            message = "Nice try! You did well! (੭˃ᴗ˂)੭"
         else:
-            message = "Don't worry! Try again and do better next time!"
+            message = "Don't worry! Try again and do better next time! (๑•̀ᗝ•́)૭"
 
         # diplay the result message in a pop up
         messagebox.showinfo("Quiz Result", message)
@@ -144,7 +144,7 @@ def start_quiz(quiz_data):
 def main_program():
     global root
     root = tk.Tk()  # create the main tkinter window
-    root.title("My Quiz Game!")  # set the title of the window
+    root.title("✨ My Quiz Game! ✨")  # set the title of the window
     root.geometry("600x500")  # set the window size
     root.withdraw()  # hide the window initially 
 
