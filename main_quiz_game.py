@@ -80,11 +80,11 @@ def start_quiz(quiz_data):
     def check_answer(selected):
         correct = current["current_question"]["answer"]  # get the correct answer
         if selected == correct:  # if correct, update score and display "Correct" feedback
-            feedback_label.config(text="Correct!")
+            feedback_label.config(text="Correct!", fg="#4CAF50")
             current["score"] += 1
         else:  # if incorrect, show the correct answer
                 correct_text = current["current_question"]["choices"][correct]
-                feedback_label.config(text=f"Wrong! Correct answer is {correct.upper()}) {correct_text}")
+                feedback_label.config(text=f"Wrong! Correct answer is {correct.upper()}) {correct_text}", fg="crimson")
 
         # disable answer buttons after selection an answer
         for button in buttons.values():
@@ -98,7 +98,7 @@ def start_quiz(quiz_data):
 
         # display the final score
         result = f" Quiz Finished! Your Score: {current['score']}/{current['total']}"
-        result_label = tk.Label(root, text=result)
+        result_label = tk.Label(root, text=result, font=("Helvetica", 18, "bold"), fg="#4CAF50", bg="#222")
         result_label.pack(pady=20)
 
         # display a motivational message based on the score
@@ -117,24 +117,24 @@ def start_quiz(quiz_data):
 
     # style configuration for buttons
     style = ttk.Style()
-    style.configure("TButton")
+    style.configure("TButton", font=("Helvetica", 13), padding=6, relief="flat", background="#444")
 
     # label to display the question
-    question_label = tk.Label(root, text="")
+    question_label = tk.Label(root, text="", font=("Helvetica", 16, "bold"), wraplength=500, justify="center", fg="white", bg="#222")
     question_label.pack(pady=20)
 
     # create answer buttons for choice a, b, c, d
     buttons = {}
     for key in ['a', 'b', 'c', 'd']:
-        buttons[key] = tk.Button(root, text="", command=lambda k=key: check_answer(k))
+        buttons[key] = tk.Button(root, text="", font=("Helvetica", 14), width=30, bg="#333", fg="white", activebackground="#222", activeforeground="blue", command=lambda k=key: check_answer(k))
         buttons[key].pack(pady=5)
 
     # feedback label to show whether the answer is correct or not
-    feedback_label = tk.Label(root, text="")
+    feedback_label = tk.Label(root, text="", font=("Helvetica", 14), fg="white", bg="#222")
     feedback_label.pack(pady=10)
 
     # button to move to the next question
-    next_button = tk.Button(root, text="Next Question ⭢", command=load_next_question)
+    next_button = tk.Button(root, text="Next Question ⭢", font=("Helvetica", 12), bg="#007acc", fg="white", command=load_next_question)
     next_button.pack(pady=10)
 
     # load the first question
