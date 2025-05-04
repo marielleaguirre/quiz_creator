@@ -14,8 +14,13 @@ def load_questions(filename):
         return []
     
     # open the file and read its content
+    with open(filename, "r", encoding="utf-8") as file:
+        content = file.read().strip()  # strip any leading/trailing whitespace
+
     # split the content into individual questions by a separator (50 dashes)
-        # initialize an empty list to store the parsed questions
+    raw_questions = content.split("-" * 50)
+    questions = []  # initialize an empty list to store the parsed questions
+    
     # loop through each raw question
         # skip invalid or empty questions
         # extract the question text and choices (a, b, c, d)
