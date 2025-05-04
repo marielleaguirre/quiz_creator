@@ -2,12 +2,17 @@
 # The user will answer the randomely selected question and check if the answer is correct
 
 # import necessary libraries for file handling, randomization, and GUI creation
+import os
 import tkinter as tk
 from tkinter import messagebox, filedialog
 
 # function to load questions from the quiz file
-def load_questions():
+def load_questions(filename):
     # check if the file exists, if not, return an empty list
+    if not os.path.exists(filename):
+        print("Quiz file not found.")
+        return []
+    
     # open the file and read its content
     # split the content into individual questions by a separator (50 dashes)
         # initialize an empty list to store the parsed questions
