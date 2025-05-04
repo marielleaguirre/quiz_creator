@@ -92,7 +92,9 @@ def start_quiz(quiz_data):
 
     # function to end the quiz and display the final score
     def end_quiz():
-        # remove all widgets to clean the window
+        for widget in root.winfo_children():  # remove all widgets to clean the window
+            widget.destroy()
+            
         # display the final score
         # display a motivational message based on the score
         # diplay the result message in a pop up
