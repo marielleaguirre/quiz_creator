@@ -52,7 +52,9 @@ def load_questions(filename):
     return questions  # return the list of parsed questions
     
 # function to start the quiz
-def start_quiz():
+def start_quiz(quiz_data):
+    # initialize the quiz state: current index, score, total number of questions, etc.
+    current = {"index": -1, "score": 0, "total": len(quiz_data), "data": quiz_data, "current_question": None}
 
     # function to load the next question
     def load_next_question():
