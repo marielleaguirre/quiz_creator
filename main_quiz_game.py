@@ -163,7 +163,9 @@ def main_program():
         return
 
     # show the main window and start the quiz
-        # run the tkinter event loop
+    root.deiconify()
+    start_quiz(questions)
+    root.mainloop()  # run the tkinter event loop
 
 # execute the main function if the script is run directly
 if __name__ == "__main__":
