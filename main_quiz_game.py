@@ -71,9 +71,9 @@ def start_quiz(quiz_data):
         for key in ['a', 'b', 'c', 'd']:
             choice = current["current_question"]["choices"][key]
             buttons[key].config(text=f"{key.upper()}) {choice}", state="normal")  # enable answer buttons
-            
-            # reset feedback label
-            # disable next button until answer is chosen
+
+        feedback_label.config(text="")  # reset feedback label
+        next_button.config(state="disabled")  # disable next button until answer is chosen
 
     # function to check if the selected answer is correct
     def check_answer():
