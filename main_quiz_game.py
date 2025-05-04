@@ -124,6 +124,11 @@ def start_quiz(quiz_data):
     question_label.pack(pady=20)
 
     # create answer buttons for choice a, b, c, d
+    buttons = {}
+    for key in ['a', 'b', 'c', 'd']:
+        buttons[key] = tk.Button(root, text="", command=lambda k=key: check_answer(k))
+        buttons[key].pack(pady=5)
+
     # feedback label to show whether the answer is correct or not
     # button to move to the next question
     # load the first question
