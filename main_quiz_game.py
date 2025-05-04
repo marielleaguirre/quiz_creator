@@ -61,14 +61,14 @@ def start_quiz(quiz_data):
     # function to load the next question
     def load_next_question():
         if not current["data"]:  # if no more questions, end the quiz
-            return end_quiz
+            return end_quiz()
         
         # select a random question, remove it from the data pool
         current["current_question"] = random.choice(current["data"])
         current["data"].remove(current["current_question"])
 
         # display the question and choices on the user interface
-        question_label.config(text=current["current_question"]["question"])
+        question_label.config(text=current["current_question"]["questions"])
         for key in ['a', 'b', 'c', 'd']:
             choice = current["current_question"]["choices"][key]
             buttons[key].config(text=f"{key.upper()}) {choice}", state="normal")  # enable answer buttons
