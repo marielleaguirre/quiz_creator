@@ -73,4 +73,7 @@ def main_program():
     # load questions from the selected quiz file
     # show the main window and start the quiz
         # run the tkinter event loop
+
 # execute the main function if the script is run directly
+if __name__ == "__main__":
+    main_program()
