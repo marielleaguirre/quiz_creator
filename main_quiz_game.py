@@ -49,7 +49,7 @@ def load_questions(filename):
         except (IndexError, ValueError):  # skip if there's an error in parsing
             continue
 
-    # return the list of parsed questions
+    return questions  # return the list of parsed questions
     
 # function to start the quiz
 def start_quiz():
