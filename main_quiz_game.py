@@ -86,7 +86,9 @@ def start_quiz(quiz_data):
                 feedback_label.config(text=f"Wrong! Correct answer is {correct.upper()}) {correct_text}")
 
         # disable answer buttons after selection an answer
-        # enable next question button
+        for button in buttons.values():
+            button.config(state="disabled")
+        next_button.config(state="normal")  # enable next question button
 
     # function to end the quiz and display the final score
     def end_quiz():
