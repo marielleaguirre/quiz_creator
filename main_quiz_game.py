@@ -112,6 +112,8 @@ def start_quiz(quiz_data):
         messagebox.showinfo("Quiz Result", message)
 
     # configure the root window (dark themed)
+    root.configure(bg="#222")
+
     # style configuration for buttons
     # label to display the question
     # create answer buttons for choice a, b, c, d
