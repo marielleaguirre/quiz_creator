@@ -61,7 +61,10 @@ def main_program():
     root.title("My Quiz Game!")  # set the title of the window
     root.geometry("600x500")  # set the window size
     root.withdraw()  # hide the window initially 
+
     # prompt the user to select a quiz file
+    file_path = filedialog.askopenfilename(title="Select Quiz File", filetypes=[("Text Files", "*.txt")])
+    
     # if no file is selected, display an error message and exit
     # load questions from the selected quiz file
     # show the main window and start the quiz
