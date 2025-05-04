@@ -66,6 +66,10 @@ def main_program():
     file_path = filedialog.askopenfilename(title="Select Quiz File", filetypes=[("Text Files", "*.txt")])
     
     # if no file is selected, display an error message and exit
+    if not file_path:
+        messagebox.showerror("No file selected", "You must select a quiz file to proceed")
+        return
+    
     # load questions from the selected quiz file
     # show the main window and start the quiz
         # run the tkinter event loop
