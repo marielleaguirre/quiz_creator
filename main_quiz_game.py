@@ -76,8 +76,8 @@ def start_quiz(quiz_data):
         next_button.config(state="disabled")  # disable next button until answer is chosen
 
     # function to check if the selected answer is correct
-    def check_answer():
-        # get the correct answer
+    def check_answer(selected):
+        correct = current["current_question"]["answer"]  # get the correct answer
         # if correct, update score and display "Correct" feedback
         # if incorrect, show the correct answer
         # disable answer buttons after selection an answer
