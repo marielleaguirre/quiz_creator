@@ -6,6 +6,7 @@ import os
 import random
 import tkinter as tk
 from tkinter import messagebox, filedialog
+from tkinter import ttk
 
 # function to load questions from the quiz file
 def load_questions(filename):
@@ -115,6 +116,9 @@ def start_quiz(quiz_data):
     root.configure(bg="#222")
 
     # style configuration for buttons
+    style = ttk.Style()
+    style.configure("TButton")
+
     # label to display the question
     # create answer buttons for choice a, b, c, d
     # feedback label to show whether the answer is correct or not
