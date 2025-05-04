@@ -130,6 +130,9 @@ def start_quiz(quiz_data):
         buttons[key].pack(pady=5)
 
     # feedback label to show whether the answer is correct or not
+    feedback_label = tk.Label(root, text="")
+    feedback_label.pack(pady=10)
+
     # button to move to the next question
     # load the first question
     
