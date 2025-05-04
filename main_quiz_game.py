@@ -3,6 +3,7 @@
 
 # import necessary libraries for file handling, randomization, and GUI creation
 import os
+import random
 import tkinter as tk
 from tkinter import messagebox, filedialog
 
@@ -62,6 +63,9 @@ def start_quiz(quiz_data):
             return end_quiz
         
         # select a random question, remove it from the data pool
+        current["current_question"] = random.choice(current["data"])
+        current["data"].remove(current["current_question"])
+
         # display the question and choices on the user interface
             # enable answer buttons
             # reset feedback label
