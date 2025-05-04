@@ -101,7 +101,16 @@ def start_quiz(quiz_data):
         result_label.pack(pady=20)
 
         # display a motivational message based on the score
+        if current["score"] == current["total"]:
+            message = "Perfect score! You're a quiz master!"
+        elif current["score"] >= current["total"] // 2:
+            message = "Nice try! You did well!"
+        else:
+            message = "Don't worry! Try again and do better next time!"
+
         # diplay the result message in a pop up
+        messagebox.showinfo("Quiz Result", message)
+
     # configure the root window (dark themed)
     # style configuration for buttons
     # label to display the question
