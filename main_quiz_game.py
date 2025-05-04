@@ -58,7 +58,9 @@ def start_quiz(quiz_data):
 
     # function to load the next question
     def load_next_question():
-        # if no more questions, end the quiz
+        if not current["data"]:  # if no more questions, end the quiz
+            return end_quiz
+        
         # select a random question, remove it from the data pool
         # display the question and choices on the user interface
             # enable answer buttons
