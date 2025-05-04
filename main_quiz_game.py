@@ -134,6 +134,9 @@ def start_quiz(quiz_data):
     feedback_label.pack(pady=10)
 
     # button to move to the next question
+    next_button = tk.Button(root, text="Next Question ⭢", command=load_next_question)
+    next_button.pack(pady=10)
+
     # load the first question
     
 # function to run the quiz game
