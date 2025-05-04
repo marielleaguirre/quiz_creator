@@ -102,6 +102,11 @@ def main_program():
         return
     
     # load questions from the selected quiz file
+    questions = load_questions(file_path)
+    if not questions:
+        messagebox.showerror("No Questions Found", "The selected file does not contain valid quiz questions.")
+        return
+
     # show the main window and start the quiz
         # run the tkinter event loop
 
