@@ -27,12 +27,28 @@ def load_questions(filename):
         lines = [line.strip() for line in raw_content.strip().splitlines()]
         if not lines or "Question:" not in lines[0]:  # skip invalid or empty questions
             continue
-        
-        # extract the question text and choices (a, b, c, d)
-            # split choice from the number and text
-        # extract the correct answer (lowercased for comparison)
-        # append the parsed question, choices, and answer to the questions list
-            # skip if there's an error in parsing
+
+        try:
+            # extract the question text and choices (a, b, c, d)
+            question_text = lines[1]
+            choices = {
+                'a': lines[2].split(")", 1)[1].strip(),  # split choice from the number and text
+                'b': lines[3].split(")", 1)[1].strip(),
+                'c': lines[4].split(")", 1)[1].strip(),
+                'd': lines[5].split(")", 1)[1].strip()
+            }
+            # extract the correct answer (lowercased for comparison)
+            answer = lines[7].strip().lower()
+
+            # append the parsed question, choices, and answer to the questions list
+            questions.append({
+                "questions": question_text,
+                "choices": choices,
+                "answer": answer
+            })
+        except (IndexError, ValueError):  # skip if there's an error in parsing
+            continue
+
     # return the list of parsed questions
     
 # function to start the quiz
