@@ -2,6 +2,8 @@
 # The user will answer the randomely selected question and check if the answer is correct
 
 # import necessary libraries for file handling, randomization, and GUI creation
+import tkinter as tk
+from tkinter import messagebox, filedialog
 
 # function to load questions from the quiz file
 def load_questions():
